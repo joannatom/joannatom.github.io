@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joanna Tom | Business Analytics & IT Portfolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #111827;
+            background: #f7f8fa;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e5e7eb;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .brand-mark {
+            color: #cc0033;
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #cc0033;
+        }
+
+        .resume-button {
+            background: #111827;
+            color: white !important;
+            padding: 11px 18px;
+            border-radius: 999px;
+        }
+
+        .resume-button:hover {
+            background: #cc0033;
+        }
+
+        .hero {
+            background: white;
+            padding: 85px 28px 100px;
+        }
+
+        .hero-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 290px 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .profile {
+            text-align: center;
+        }
+
+        .headshot {
+            width: 230px;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.14);
+        }
+
+        .profile h2 {
+            margin-top: 20px;
+            font-size: 1.45rem;
+        }
+
+        .profile .school {
+            color: #cc0033;
+            font-weight: 700;
+            margin-top: 3px;
+        }
+
+        .profile .class-year {
+            color: #6b7280;
+            margin-top: 2px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            background: #f7dce3;
+            color: #8f1735;
+            padding: 7px 14px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            line-height: 1.02;
+            letter-spacing: -2px;
+            max-width: 800px;
+            margin-bottom: 24px;
+        }
+
+        .hero-description {
+            color: #4b5563;
+            font-size: 1.12rem;
+            max-width: 760px;
+            margin-bottom: 28px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 999px;
+            border: 1px solid #d1d5db;
+            font-weight: 700;
+            background: white;
+        }
+
+        .button.primary {
+            background: #111827;
+            color: white;
+            border-color: #111827;
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        section {
+            padding: 85px 28px;
+        }
+
+        .section-container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            color: #cc0033;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+        }
+
+        h2.section-title {
+            font-size: 2.3rem;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .section-intro {
+            color: #6b7280;
+            max-width: 700px;
+            margin-bottom: 34px;
+        }
+
+        .skills-section {
+            background: #f7f8fa;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 25px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .skill-card p {
+            color: #6b7280;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 14px;
+        }
+
+        .tag {
+            background: #f3f4f6;
+            border-radius: 999px;
+            padding: 7px 11px;
+            font-size: 0.84rem;
+            font-weight: 600;
+        }
+
+        .projects-section {
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            min-height: 300px;
+            transition: 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .project-number {
+            color: #cc0033;
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+
+        .project-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #596170;
+            margin-bottom: 22px;
+        }
+
+        .project-link {
+            margin-top: auto;
+            color: #8f1735;
+            font-weight: 800;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .about-section {
+            background: #f7f8fa;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .about-card {
+            background: white;
+            border-radius: 18px;
+            border: 1px solid #e5e7eb;
+            padding: 28px;
+        }
+
+        .about-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .about-card p {
+            color: #596170;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            padding: 38px 28px;
+        }
+
+        .footer-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .footer-container p {
+            color: #d1d5db;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 18px;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: #f7a9bd;
+        }
+
+        @media (max-width: 850px) {
+            .hero-container,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-container {
+                text-align: center;
+                gap: 40px;
+            }
+
+            .profile {
+                order: 2;
+            }
+
+            .hero-content {
+                order: 1;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .nav-container {
+                padding: 15px 18px;
+            }
+
+            .brand {
+                font-size: 0.9rem;
+            }
+
+            .nav-links a:not(.resume-button) {
+                display: none;
+            }
+
+            .hero,
+            section {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#about" class="brand">
+                <span class="brand-mark">RBS</span>
+                <span>Joanna's Portfolio</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="resume.pdf" class="resume-button" target="_blank">Download Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="hero" id="about">
+            <div class="hero-container">
+
+                <div class="profile">
+                    <img src="headshot.png" alt="Professional headshot of Joanna Tom" class="headshot">
+                    <h2>Joanna Tom</h2>
+                    <div class="school">Rutgers Business School</div>
+                    <div class="class-year">Class of 2028</div>
+                </div>
+
+                <div class="hero-content">
+                    <div class="eyebrow">Business Analytics • IT • Finance</div>
+
+                    <h1>Turning business data and ideas into meaningful solutions.</h1>
+
+                    <p class="hero-description">
+                        I am a Rutgers Business School student studying Business Analytics, IT, and Finance,
+                        developing skills in data analysis, business operations, communication, and leadership
+                        through academic projects, campus organizations, and professional experiences.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="mailto:jtt96@scarletmail.rutgers.edu" class="button primary">Email Me</a>
+                        <a href="#projects" class="button">View My Projects ↓</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="skills-section" id="skills">
+            <div class="section-container">
+                <div class="section-label">Skills</div>
+                <h2 class="section-title">What I Bring</h2>
+                <p class="section-intro">
+                    A combination of analytical, technical, communication, and leadership skills developed
+                    through coursework, campus employment, internships, and student organizations.
+                </p>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Analytics & Business</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Microsoft Excel</span>
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">Cost Analysis</span>
+                            <span class="tag">Data Tracking</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Creative & Digital</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Canva</span>
+                            <span class="tag">Adobe</span>
+                            <span class="tag">Digital Content</span>
+                            <span class="tag">Marketing</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Professional</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Leadership</span>
+                            <span class="tag">Communication</span>
+                            <span class="tag">Public Speaking</span>
+                            <span class="tag">Problem Solving</span>
+                            <span class="tag">Event Operations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-section" id="projects">
+            <div class="section-container">
+                <div class="section-label">Projects & Experience</div>
+                <h2 class="section-title">Selected Work</h2>
+                <p class="section-intro">
+                    Examples of projects and event initiatives where I have applied organization, analytics,
+                    communication, and leadership skills.
+                </p>
+
+                <div class="projects-grid">
+
+                    <article class="project-card">
+                        <div class="project-number">01 / EVENT MANAGEMENT</div>
+                        <h3>Pan-Asian Lunar New Year Celebration</h3>
+                        <p>
+                            As a Senior Intern with the Rutgers Asian American Cultural Center, I helped coordinate
+                            a campus-wide Pan-Asian Lunar New Year celebration serving approximately 300 Rutgers
+                            students. My work included event logistics, resource coordination, communication, and
+                            supporting the overall event experience.
+                        </p>
+                        <a href="https://www.instagram.com/p/DVd-xyXgOJl/?img_index=1"
+                           class="project-link" target="_blank" rel="noopener">
+                            View Event Post →
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">02 / CAMPUS LEADERSHIP</div>
+                        <h3>APIDA Gala</h3>
+                        <p>
+                            I contributed to the planning and execution of the Rutgers Asian Pacific Islander
+                            Desi American (APIDA) Gala, an event recognizing graduating students who held
+                            leadership positions across the university. The project involved event coordination,
+                            communication, and creating an experience that celebrated student leadership.
+                        </p>
+                        <a href="https://www.instagram.com/p/DXpWSHDidpM/"
+                           class="project-link" target="_blank" rel="noopener">
+                            View Gala Flyer →
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">03 / DATA ANALYTICS</div>
+                        <h3>E-Commerce Customer Churn Analysis</h3>
+                        <p>
+                            For a Rutgers Management Information Systems project, I analyzed an e-commerce customer
+                            dataset to explore whether discounts or customer engagement were more strongly associated
+                            with customer value and churn. The project used data visualization to examine purchase
+                            behavior, email engagement, social media engagement, mobile app usage, and churn.
+                        </p>
+                        <a href="#skills" class="project-link">
+                            View Related Skills →
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="section-container">
+                <div class="section-label">Experience</div>
+                <h2 class="section-title">Building Skills Through Experience</h2>
+
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>Rutgers Student Centers & Activities</h3>
+                        <p>
+                            As a Building Operations Manager, I supervise 3–5 staff members per shift and support
+                            facility operations, safety, event setups, audiovisual equipment, guest assistance,
+                            and reservation adjustments.
+                        </p>
+                    </div>
+
+                    <div class="about-card">
+                        <h3>Rutgers Asian American Cultural Center</h3>
+                        <p>
+                            Through my internship experience, I have supported campus-wide events, analyzed event
+                            engagement metrics, tracked attendance and budgeting information, and collaborated with
+                            student leadership teams on planning and communication.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div>
+                <strong>Joanna Tom</strong>
+                <p>Business Analytics, IT & Finance • Rutgers Business School</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="mailto:jtt96@scarletmail.rutgers.edu">Email</a>
+                <a href="resume.pdf" target="_blank">Resume</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
